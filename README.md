@@ -1,34 +1,41 @@
-# Portfolio Starter Kit
+# Dylan Van Parys — Portfolio
 
-This portfolio is built with **Next.js** and a library called [Nextra](https://nextra.vercel.app/). It allows you to write Markdown and focus on the _content_ of your portfolio. This starter includes:
+A personal portfolio built with Next.js, React, and plain CSS.
 
-- Automatically configured to handle Markdown/MDX
-- Generates an RSS feed based on your posts
-- A beautiful theme included out of the box
-- Easily categorize posts with tags
-- Fast, optimized web font loading
+## Development
 
-## Configuration
-
-1. Update your name in `theme.config.js` or change the footer.
-1. Update your name and site URL for the RSS feed in `scripts/gen-rss.js`.
-1. Update the meta tags in `pages/_document.js`.
-1. Update the posts inside `pages/posts/*.md` with your own content.
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/nextjs-portfolio-starter&project-name=portfolio&repository-name=portfolio)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Requires Node.js 20.9 or newer.
 
 ```bash
-npx create-next-app --example blog my-blog
-# or
-yarn create next-app --example blog my-blog
+npm install
+npm run dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+If file watching is restricted:
+
+```bash
+WATCHPACK_POLLING=true npm run dev -- --webpack
+```
+
+## Production
+
+```bash
+npm run build
+npm start
+```
+
+## Editing
+
+Content is written directly in JSX:
+
+- `components/Profile.jsx`: introduction, photo, and contact links.
+- `components/ExperienceSection.jsx`: the three experience entries.
+- `components/Experience.jsx`: shared timeline card layout.
+- `components/Technologies.jsx`: grouped technology tags.
+- `components/Eductation.jsx`: university and degree.
+
+`pages/index.js` assembles the page and contains its search and sharing metadata. All styling is in `styles/main.css`.
+
+Replace `public/me.png` to update the portrait and `public/dylan_van_parys.pdf` to update the downloadable CV. Company images are in `public/images/`.
+
+If the production domain changes, update `pages/index.js`, `public/robots.txt`, and `public/sitemap.xml`.
